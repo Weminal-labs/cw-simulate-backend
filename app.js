@@ -27,7 +27,7 @@ let resultContractAddress = "";
 
 app.get("/deploy-contract", async (req, res, next) => {
   const bytes = fs.readFileSync(
-    "/home/asus/Workspace/Oraichain101/cosmwasm-poc/artifacts/cosmwasm_poc.wasm"
+    "/Users/apple/Documents/dev/oraichain/Oraichain101/cosmwasm-poc/artifacts/cosmwasm_poc.wasm"
   );
 
   const unit8Array = new Uint8Array(bytes);
@@ -73,16 +73,16 @@ app.get("/execute", async (req, res, next) => {
   );
 
   
-  const downloadState = new DownloadState(
-    "https://testnet-lcd.orai.io",
-    path.resolve(__dirname, "data")
-  );
-  await downloadState.loadState(
-    client,
-    sender,
-    resultContractAddress,
-    "label"
-  );
+  // const downloadState = new DownloadState(
+  //   "https://testnet-lcd.orai.io",
+  //   path.resolve(__dirname, "data")
+  // );
+  // await downloadState.loadState(
+  //   client,
+  //   sender,
+  //   resultContractAddress,
+  //   "label"
+  // );
   res.json(execute_result);
 });
 
